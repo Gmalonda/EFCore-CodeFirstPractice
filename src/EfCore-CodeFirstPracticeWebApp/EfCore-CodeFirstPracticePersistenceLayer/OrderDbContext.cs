@@ -7,8 +7,6 @@ namespace EfCore_CodeFirstPracticePersistenceLayer
     public class OrderDbContext :  DbContext
     {
 
-        
-
         public OrderDbContext()
         {
 
@@ -24,12 +22,22 @@ namespace EfCore_CodeFirstPracticePersistenceLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+            modelBuilder.Entity<Customer>()
+           .Property(b => b.FirstName).HasColumnName("CustomerFirstName").HasMaxLength(50);
+            
+            modelBuilder.Entity<Customer>().ToTable("CustomerWithOrder");
+
+            modelBuilder.Entity<Order>()
+            .HasOne(o => o.Customer)
+            .WithMany(c => c.Orders)
+            .HasForeignKey("FK_CustomerID").HasConstraintName("FK_Orders_CustomerWithOrder_FK_CustomerID");
         }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(ConfigurationConst.ConnectionString);
+
         }
 
     }

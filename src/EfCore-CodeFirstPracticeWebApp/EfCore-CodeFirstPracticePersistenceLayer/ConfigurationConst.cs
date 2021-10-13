@@ -8,6 +8,6 @@ namespace EfCore_CodeFirstPracticePersistenceLayer
 {
     public static class ConfigurationConst
     {
-        public const string ConnectionString = @"";
+        public const string ConnectionString = @"Data Source=localhost;Initial Catalog=evalGedeonDb;User ID=evalGedeonUser;Password=DYGLO7_m";
     }
 }
