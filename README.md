@@ -35,3 +35,6 @@ OrderDbContext class
 - Add a screenshot of your test result in your ReadMe.md
 - Comit and push your result in your git repository
 - Send the adress of your repository at Gaultier Large and Michel Girard on Teams
+
+## 7 : Result test
+- https://github.com/Gmalonda/EFCore-CodeFirstPractice/blob/evalgedeon/CaptureResultTest.PNG
